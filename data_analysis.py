@@ -12,3 +12,13 @@ print(df["marks"].mean())
 
 print("\nGender-wise average marks:")
 print(df.groupby("gender")["marks"].mean())
+import matplotlib.pyplot as plt
+
+gender_avg = df.groupby("gender")["marks"].mean()
+
+gender_avg.plot(kind="bar", title="Average Marks by Gender")
+plt.xlabel("Gender")
+plt.ylabel("Average Marks")
+plt.tight_layout()
+plt.show()
+
